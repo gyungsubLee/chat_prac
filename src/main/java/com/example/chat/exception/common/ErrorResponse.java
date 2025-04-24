@@ -3,16 +3,18 @@ package com.example.chat.exception.common;
 
 import java.time.LocalDateTime;
 
-public record ErrorResponse(
+public record ErrorResponse<T>(
         String code,
-        String message,
+        T message,
         int httpStatus,
         LocalDateTime timestamp
 ) {
-    public static ErrorResponse of(ErrorCode errorCode) {
-        return new ErrorResponse(
+
+    // 단일 에러 메시지만 있는 경우
+    public static <T> ErrorResponse<T> of(ErrorCode errorCode, T message) {
+        return new ErrorResponse<>(
                 errorCode.getCode(),
-                errorCode.getMessage(),
+                message,
                 errorCode.getHttpStatus().value(),
                 LocalDateTime.now()
         );
