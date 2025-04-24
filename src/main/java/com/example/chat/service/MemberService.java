@@ -1,7 +1,7 @@
 package com.example.chat.service;
 
 import com.example.chat.domain.Member;
-import com.example.chat.exception.EmailAlreadyExistsException;
+import com.example.chat.common.exception.custom.EmailAlreadyExistsException;
 import com.example.chat.repository.MemberRepository;
 import com.example.chat.service.request.MemberCreateReqDto;
 import lombok.RequiredArgsConstructor;

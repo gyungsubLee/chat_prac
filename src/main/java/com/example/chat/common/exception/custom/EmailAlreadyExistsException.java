@@ -1,7 +1,7 @@
-package com.example.chat.exception;
+package com.example.chat.common.exception.custom;
 
-import com.example.chat.exception.common.BusinessException;
-import com.example.chat.exception.common.ErrorCode;
+import com.example.chat.common.exception.BusinessException;
+import com.example.chat.common.exception.ErrorCode;
 
 public class EmailAlreadyExistsException extends BusinessException {
 
