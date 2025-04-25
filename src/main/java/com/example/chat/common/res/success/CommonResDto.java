@@ -8,6 +8,10 @@ public record CommonResDto<T>(
         T data
 ) {
     public static <T> CommonResDto<T> of(SuccessCode successCode, T data) {
-        return new CommonResDto<>(successCode.getCode(), successCode.getMessage(), data);
+        return new CommonResDto<>(
+                successCode.getCode(),
+                successCode.getMessage(),
+                data
+        );
     }
 }
