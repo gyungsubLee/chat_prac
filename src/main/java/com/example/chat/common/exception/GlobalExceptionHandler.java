@@ -1,8 +1,7 @@
 package com.example.chat.common.exception;
 
-import com.example.chat.common.exception.BusinessException;
-import com.example.chat.common.exception.ErrorCode;
-import com.example.chat.common.exception.ErrorResponse;
+import com.example.chat.common.res.ErrorCode;
+import com.example.chat.common.res.fail.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

@@ -1,5 +1,6 @@
 package com.example.chat.common.exception;
 
+import com.example.chat.common.res.ErrorCode;
 import lombok.Getter;
 
 @Getter
