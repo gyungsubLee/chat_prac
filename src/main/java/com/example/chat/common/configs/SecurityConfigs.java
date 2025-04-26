@@ -32,9 +32,10 @@ public class SecurityConfigs {
                 // 특정 url 패턴에 대해서는 Authentication 객체 요구하지 않음. ( 인증 처리 제외 )
                 .authorizeHttpRequests(a -> a.requestMatchers("/members/create", "/members/doLogin").permitAll().anyRequest().authenticated())
                 .sessionManagement(s->s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))  // 세션 방식을 사용하지 않겠다 라는 의미
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)  // 커스텀 필터(jwtAuthFilter)로 가서 유저 인증 정보를 확인 후 chain.doFiter(..)를 통해 돌아온다.
                 .build();
     }
+
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

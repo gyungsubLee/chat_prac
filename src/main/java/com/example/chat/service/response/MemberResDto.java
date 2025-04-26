@@ -8,15 +8,16 @@ public record MemberResDto (
         Long memberId,
         String email,
         String name,
-        ROLE role
+        String token
 
 ) implements BaseDtoType  {
-    public static MemberResDto from(Member member) {
+
+    public static MemberResDto from(Member member, String token) {
         return new MemberResDto(
                 member.getId(),
                 member.getEmail(),
                 member.getName(),
-                member.getRole()
+                token
         );
     }
 }

@@ -4,6 +4,7 @@ import com.example.chat.common.res.success.CommonResDto;
 import com.example.chat.common.res.SuccessCode;
 import com.example.chat.service.MemberService;
 import com.example.chat.service.request.MemberCreateReqDto;
+import com.example.chat.service.request.MemberLoginReqDto;
 import com.example.chat.service.response.MemberResDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -30,4 +31,16 @@ public class MemberController {
                 .body(CommonResDto.of(code));
     }
 
+    @PostMapping("/doLogin")
+    public ResponseEntity<?> login(@RequestBody @Valid MemberLoginReqDto reqDto) {
+
+        // email, password 검증 및 access token 발생
+        MemberResDto resDto = memberService.login(reqDto);
+
+        SuccessCode code = SuccessCode.SUCCESS;
+
+        return ResponseEntity
+                .status(code.getHttpStatus())
+                .body(CommonResDto.of(code, resDto));
+    }
 }
