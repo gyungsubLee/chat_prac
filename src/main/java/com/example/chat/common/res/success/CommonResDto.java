@@ -14,4 +14,12 @@ public record CommonResDto<T>(
                 data
         );
     }
+
+    public static <T> CommonResDto<T> of(SuccessCode successCode) {
+        return new CommonResDto<>(
+                successCode.getCode(),
+                successCode.getMessage(),
+                null
+        );
+    }
 }
