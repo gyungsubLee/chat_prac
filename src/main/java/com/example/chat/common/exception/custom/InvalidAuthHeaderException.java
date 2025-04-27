@@ -2,6 +2,6 @@ package com.example.chat.common.exception.custom;
 
 import com.example.chat.common.exception.BusinessException;
 
-public class EmailAlreadyExistsException extends BusinessException {
+public class InvalidAuthHeaderException extends BusinessException {
 
 }
