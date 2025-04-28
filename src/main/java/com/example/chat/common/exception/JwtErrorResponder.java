@@ -22,8 +22,9 @@ public class JwtErrorResponder {
     private final Map<ErrorCode, String> errorResponseCache = new ConcurrentHashMap<>();
     private final ObjectMapper objectMapper;
 
-    public void sendErrorResponse(HttpServletRequest request, HttpServletResponse response, ErrorCode errorCode) {
+    public void sendErrorResponse(HttpServletRequest request, HttpServletResponse response, Throwable ex) {
         try {
+            ErrorCode errorCode = ExceptionResolver.resolveErrorCode(ex);
             response.setStatus(errorCode.getHttpStatus().value());
             response.setContentType("application/json;charset=UTF-8");
 

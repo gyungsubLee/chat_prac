@@ -67,15 +67,16 @@ public class JwtAuthFilter extends GenericFilter {
             }
 
             chain.doFilter(request, response);
-        } catch (InvalidAuthHeaderException e) {
-            log.warn("Authorization 헤더 형식 오류", e);
-            errorResponder.sendErrorResponse(httpServletRequest, httpServletResponse, ErrorCode.INVALID_AUTH_HEADER);
-        } catch (io.jsonwebtoken.JwtException e) {
-            log.warn("JWT 토큰 파싱 오류", e);
-            errorResponder.sendErrorResponse(httpServletRequest, httpServletResponse, ErrorCode.INVALID_TOKEN);
         } catch (Exception e) {
-            log.error("Unhandled Exception 발생", e);
-            errorResponder.sendErrorResponse(httpServletRequest, httpServletResponse, ErrorCode.INTERNAL_SERVER_ERROR);
+            if (e instanceof InvalidAuthHeaderException) {
+                log.warn("Authorization 헤더 형식 오류", e);
+            } else if (e instanceof io.jsonwebtoken.JwtException) {
+                log.warn("JWT 토큰 파싱 오류", e);
+            } else {
+                log.error("Unhandled Exception 발생", e);
+            }
+
+            errorResponder.sendErrorResponse(httpServletRequest, httpServletResponse, e);
         }
     }
 }
