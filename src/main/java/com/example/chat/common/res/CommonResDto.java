@@ -1,6 +1,4 @@
-package com.example.chat.common.res.success;
-
-import com.example.chat.common.res.SuccessCode;
+package com.example.chat.common.res;
 
 public record CommonResDto<T>(
         String code,

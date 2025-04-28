@@ -1,8 +1,7 @@
 package com.example.chat.service.response;
 
-import com.example.chat.common.res.success.BaseDtoType;
+import com.example.chat.common.res.BaseDtoType;
 import com.example.chat.domain.Member;
-import com.example.chat.domain.ROLE;
 
 public record MemberResDto (
         Long memberId,

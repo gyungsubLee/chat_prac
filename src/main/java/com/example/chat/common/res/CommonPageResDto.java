@@ -1,9 +1,8 @@
-package com.example.chat.common.res.success;
+package com.example.chat.common.res;
 
 
 
 
-import com.example.chat.common.res.SuccessCode;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
