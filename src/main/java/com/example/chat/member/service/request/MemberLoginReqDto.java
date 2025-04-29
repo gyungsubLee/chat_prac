@@ -1,4 +1,4 @@
-package com.example.chat.service.request;
+package com.example.chat.member.service.request;
 
 
 import jakarta.validation.constraints.Email;

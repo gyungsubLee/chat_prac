@@ -1,4 +1,4 @@
-package com.example.chat.domain;
+package com.example.chat.member.domain;
 
 import jakarta.persistence.*;
 import lombok.*;

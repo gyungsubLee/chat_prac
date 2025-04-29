@@ -1,13 +1,13 @@
-package com.example.chat.service;
+package com.example.chat.member.service;
 
 import com.example.chat.common.auth.JwtTokenProvider;
 import com.example.chat.common.exception.custom.InvalidMemberException;
-import com.example.chat.domain.Member;
+import com.example.chat.member.domain.Member;
 import com.example.chat.common.exception.custom.EmailAlreadyExistsException;
-import com.example.chat.repository.MemberRepository;
-import com.example.chat.service.request.MemberCreateReqDto;
-import com.example.chat.service.request.MemberLoginReqDto;
-import com.example.chat.service.response.MemberResDto;
+import com.example.chat.member.repository.MemberRepository;
+import com.example.chat.member.service.request.MemberCreateReqDto;
+import com.example.chat.member.service.request.MemberLoginReqDto;
+import com.example.chat.member.service.response.MemberResDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

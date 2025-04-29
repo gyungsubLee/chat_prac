@@ -1,11 +1,11 @@
-package com.example.chat.controller;
+package com.example.chat.member.controller;
 
 import com.example.chat.common.res.success.CommonResDto;
 import com.example.chat.common.res.SuccessCode;
-import com.example.chat.service.MemberService;
-import com.example.chat.service.request.MemberCreateReqDto;
-import com.example.chat.service.request.MemberLoginReqDto;
-import com.example.chat.service.response.MemberResDto;
+import com.example.chat.member.service.MemberService;
+import com.example.chat.member.service.request.MemberCreateReqDto;
+import com.example.chat.member.service.request.MemberLoginReqDto;
+import com.example.chat.member.service.response.MemberResDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
