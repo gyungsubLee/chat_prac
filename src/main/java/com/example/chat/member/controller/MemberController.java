@@ -1,6 +1,6 @@
 package com.example.chat.member.controller;
 
-import com.example.chat.common.res.success.CommonResDto;
+import com.example.chat.common.res.CommonResDto;
 import com.example.chat.common.res.SuccessCode;
 import com.example.chat.member.service.MemberService;
 import com.example.chat.member.service.request.MemberCreateReqDto;

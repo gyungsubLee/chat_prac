@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Slf4j
-@Component
+//@Component
 public class SimpleWebsocketHandler extends TextWebSocketHandler {
 
     // 연결 관리: Thread Safe 한 Set 사용
@@ -40,5 +40,4 @@ public class SimpleWebsocketHandler extends TextWebSocketHandler {
         sessions.remove(session);
         log.debug("disconnected : {}", session.getId());
     }
-
 }
