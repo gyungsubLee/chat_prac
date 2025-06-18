@@ -1,4 +1,4 @@
-package com.example.chat.member.domain;
+package com.example.chat.chat.domain;
 
 import com.example.chat.common.domain.BaseTimeEntity;
 import jakarta.persistence.*;
@@ -7,23 +7,17 @@ import lombok.*;
 @Entity
 @Getter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Member extends BaseTimeEntity {
+@AllArgsConstructor
+public class Chatroom extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Column(nullable = false)
-    private String password;
-
-    @Enumerated(EnumType.STRING)
     @Builder.Default
-    private ROLE role = ROLE.USER;
+    private String isGroupChat = "N";
 }
